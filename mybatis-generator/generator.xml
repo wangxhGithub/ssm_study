@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- oracle lib location -->
+	<classPathEntry location="E:\Java\maven\jarbase\mysql\mysql-connector-java\5.1.37\mysql-connector-java-5.1.37.jar" />
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!-- mysql URL、username、password -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/hjwang" userId="root" password="">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- model package and location -->
+		<javaModelGenerator targetPackage="com.hjwang.model" targetProject="E:\eclipse-web\workspace\ssm_study\mybatis-generator">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!-- mapping package and location -->
+		<sqlMapGenerator targetPackage="com.hjwang.mapping" targetProject="E:\eclipse-web\workspace\ssm_study\mybatis-generator">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- dao package and location -->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.hjwang.dao" targetProject="E:\eclipse-web\workspace\ssm_study\mybatis-generator">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!-- table name,  change tableName and domainObjectName  -->
+		<table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		
+	</context>
+</generatorConfiguration>
